@@ -1,0 +1,7 @@
+# Exported functions
+export(read.formscanner, resp2binary, freq, person.stat, item.stat, report)
+
+
+# S3 methods
+S3method(print, frlist)
+S3method(plot, frlist)
