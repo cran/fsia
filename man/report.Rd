@@ -5,16 +5,19 @@
 This function produces a graphic with the responses given by one or a few persons and shows the correct ones. 
 }
 \usage{
-report(obj, columns, whichid, grid = TRUE, main = "", las = 0)
+report(obj, columns, whichid, grid = TRUE, main = "", las = 0, itemlab = NULL, 
+  weights = FALSE)
 }
 \arguments{
-	\item{obj}{An object of class \code{fsdata} containing the data imported by function \code{\link{read.formscanner}}.
-		\code{key} should not be \code{NULL}.}
+  \item{obj}{An object containing the data imported by function \code{\link{read.formscanner}}, 
+		the key added by function \code{\link{addkey}} and/or weights added by function \code{\link{addweights}}.}
 	\item{columns}{A vector containing which columns to use. Columns can be specified by name or number.}
 	\item{whichid}{A vector containing the values of variable \code{id} that are shown on the graph.}
 	\item{grid}{logical; if \code{TRUE} horizontal lines are drown on the graph.}
 	\item{main}{an overall title for the plot.}
 	\item{las}{numeric in {0,1,2,3}; the style of axis labels (see \code{\link{par}}).}
+	\item{itemlab}{labels of the items.}
+	\item{weights}{logical. If \code{TRUE} the weights are displayed.}
 }
 \details{
 Correct responses are colored green, wrong responses are colored red.
@@ -24,8 +27,18 @@ Correct responses are colored green, wrong responses are colored red.
 \code{\link{read.formscanner}}
 }
 \examples{
-data(exam1)
-report(obj = exam1, col = 2:31, whichid = c("101844", "101272"))
-report(obj = exam1, col = c("I2", "I5", "I6", "I8", "I10", "I14", "I22"), 
-	whichid = exam1$data$id[1:10], las= 3)
+data(test)
+data(key)
+data(weights)
+data(weights_multiple)
+
+testk <- addkey(test, keydata = key)
+testw <- addweights(testk, weightsdata = weights)
+testwm <- addweights(test, weightsdata = weights_multiple)
+
+par(mfrow = c(1, 2))
+report(obj = testk, col = 2:11, whichid = c("102344", "245784"))
+report(obj = testw, col = 2:11, whichid = c("102344", "245784"), weights = TRUE)
+par(mfrow = c(1, 1))
+report(obj = testwm, col = 2:11, whichid = c("102344", "245784"), weights = TRUE)
 }

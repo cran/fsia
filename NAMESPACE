@@ -1,5 +1,10 @@
+# Imported functions
+importFrom("grDevices", "devAskNewPage")
+importFrom("graphics", "axis", "abline", "barplot", "plot", "text")
+importFrom("utils", "read.csv2")
+
 # Exported functions
-export(read.formscanner, resp2binary, freq, person.stat, item.stat, report)
+export(read.formscanner, addkey, addweights, resp2binary, resp2scores, freq, person.stat, item.stat, report)
 
 
 # S3 methods

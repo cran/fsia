@@ -8,7 +8,8 @@ Converts data to binary (correct/incorrect) responses, according to the key.
 resp2binary(obj, columns)
 }
 \arguments{
-  \item{obj}{An object of class \code{fsdata} containing the data imported by function \code{\link{read.formscanner}}.}
+  \item{obj}{An object containing the data imported by function \code{\link{read.formscanner}} 
+		and the key added by function \code{\link{addkey}}.}
   \item{columns}{A vector containing which columns to use. Columns can be specified by name or number.}
 }
 \value{
@@ -19,9 +20,11 @@ The data frame \code{data} contained in \code{obj} with \code{columns} replaced 
 \code{\link{read.formscanner}}
 }
 \examples{
-data(exam1)
-exam1bin <- resp2binary(obj = exam1, col = 2:31)
-head(exam1bin)
-exam1bin <- resp2binary(obj = exam1, col = c("I1", "I2"))
-head(exam1bin)
+data(test)
+data(key)
+
+testk <- addkey(test, keydata = key)
+
+resp01 <- resp2binary(obj = testk, col = 2:41)
+resp01
 }

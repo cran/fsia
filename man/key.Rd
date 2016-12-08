@@ -5,15 +5,15 @@
 Key of Items 
 }
 \description{
-This data set contains the correct responses of the items of all data sets of the fsia package.
+This data set contains the correct responses of the items in the test data set.
 }
 \usage{data("key")}
 \format{
-  A data frame with variables \code{I1-I50}.
+  A data frame with variables \code{Question01 - Question40}.
 }
 \author{Michela Battauz}
 \seealso{
-	\code{\link{exam1}}, \code{\link{mchoice1}}, \code{\link{mchoice1id}}, \code{\link{mchoice2}}, \code{\link{mchoice2id}}
+	\code{\link{addkey}}
 }
 \examples{
 data(key)

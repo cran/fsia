@@ -1,0 +1,12 @@
+﻿Changes in version: fsia_1.1
+
+The main changes are the possibility of scoring using weights and the 
+conversion of multiple responses to dummy variables. In detail:
+* added functions addkey and addweights 
+* added option dummy in function read.formscanner
+* added function resp2scores
+* functions person.stat and item.stat can perform scoring using weights
+* deleted previous datasets and added datasets "test" and "questionnaire"
+* added folder examples with csv files and two forms
+* same changes in .Rd files
+
