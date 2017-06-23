@@ -14,15 +14,15 @@ These analyses include the conversion of multiple responses to binary (correct/i
 the computation of the number of corrected responses for each subject or item, 
 scoring using weights,
 the computation and the graphical representation of the frequencies of the responses 
-to each item and the report of the responses of a few persons.
+to each item and the report of the responses of a few subjects.
 }
 \details{
 \tabular{ll}{
 Package: \tab fsia\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2016-12-06\cr
-License: \tab GPL (>= 2)
+Version: \tab 1.1.1\cr
+Date: \tab 2017-06-23\cr
+License: \tab GPL-3
 }
 Data of questionnaires and tests are often collected on paper forms.
 FormScanner is an open source software that converts scanned images 
@@ -44,7 +44,7 @@ Function \code{\link{freq}} calculates the absolute or percentage
 frequencies of the responses to each item. The frequencies can
 be printed on screen or plotted on a graph. In both cases, the
 true responses (if any) are highlighted.
-The responses given by one or a few persons can be displayed 
+The responses given by one or a few subjects can be displayed 
 on a graph by using function \code{\link{report}}.
 The key is shown on the right and wrong responses can be immediately
 identified by the red colour.
@@ -63,7 +63,7 @@ contains the weights of each response.
 	Maintainer: Michela Battauz <michela.battauz@uniud.it>
 }
 \references{
-Borsetta, A. (2016). FormScanner [Computer Software],
+Borsetta, A. (2017). FormScanner [Computer Software],
 URL http://sourceforge.net/projects/formscanner/.
 }
 \keyword{ package }
@@ -139,7 +139,7 @@ fr
 par(mfrow = c(1, 2))
 plot(fr, ask = FALSE)
 
-# RESPONSES OF TWO PERSONS
+# RESPONSES OF TWO SUBJECTS
 par(mfrow = c(1, 2))
 report(obj = testk, col = 2:11, whichid = c("102344", "245784"))
 report(obj = testw, col = 2:11, whichid = c("102344", "245784"), weights = TRUE)

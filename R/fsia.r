@@ -199,7 +199,7 @@ item.stat<-function(obj,columns,weights=FALSE)
 }
 
 
-# added itemlab
+
 report<-function(obj,columns,whichid,grid=TRUE,main="",las=0,itemlab=NULL,weights=FALSE)
 {
 	if (!any(colnames(obj$data)=="id")) stop("id variable is missing. Select id in function read.formscanner.\n")
@@ -207,14 +207,14 @@ report<-function(obj,columns,whichid,grid=TRUE,main="",las=0,itemlab=NULL,weight
 	else item<-columns
 	n<-length(columns)
 	resp<-as.matrix(obj$data[obj$data$id%in%whichid,columns])
-	if (!is.null(itemlab)) item<-itemlab #modified
+	if (is.null(itemlab)) itemlab <- item
 	nid<-length(whichid)
 	if (!weights) {
 		if (!is.null(obj$key)) key<-as.matrix(obj$key[,item])
 		else key<-obj$key
 		plot(1,ylim=c(0,n),xlim=c(0.5,nid+2+0.5),type="n",xaxt="n",yaxt="n",bty="n",ann=FALSE,main=main,las=las)
 		axis(1,at=1:(nid+2),labels=c("item",whichid,"key"),tick=FALSE)
-		text(1,n:1-0.5,item)
+		text(1,n:1-0.5,itemlab)
 		for (i in seq_along(whichid)) {
 			colour<-rep(2,n)
 			colour[resp[i,]==key]<-3
@@ -228,7 +228,7 @@ report<-function(obj,columns,whichid,grid=TRUE,main="",las=0,itemlab=NULL,weight
 			else key<-obj$key
 			plot(1,ylim=c(0,n),xlim=c(0.5,nid+2+0.5),type="n",xaxt="n",yaxt="n",bty="n",ann=FALSE,main=main,las=las)
 			axis(1,at=1:(nid+2),labels=c("item",whichid,"weights"),tick=FALSE)
-			text(1,n:1-0.5,item)
+			text(1,n:1-0.5,itemlab)
 			for (i in seq_along(whichid)) {
 				colour<-rep(2,n)
 				colour[resp[i,]==key]<-3
@@ -241,7 +241,7 @@ report<-function(obj,columns,whichid,grid=TRUE,main="",las=0,itemlab=NULL,weight
 		if (nrow(obj$weights)>1) {
 			plot(1,ylim=c(0,n),xlim=c(0.5,nid+2+0.5),type="n",xaxt="n",yaxt="n",bty="n",ann=FALSE,main=main,las=las)
 			axis(1,at=1:(nid+2),labels=c("item",whichid,"weights"),tick=FALSE)
-			text(1,n:1-0.5,item)
+			text(1,n:1-0.5,itemlab)
 			weights<-as.matrix(obj$weights[,item])
 			text(1,n:1-0.5,item)
 			for (j in 1:length(columns)) {

@@ -2,7 +2,7 @@
 \alias{report}
 \title{Report the Responses}
 \description{
-This function produces a graphic with the responses given by one or a few persons and shows the correct ones. 
+This function produces a graphic with the responses given by one or a few subjects and shows the correct ones. 
 }
 \usage{
 report(obj, columns, whichid, grid = TRUE, main = "", las = 0, itemlab = NULL, 
