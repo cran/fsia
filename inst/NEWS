@@ -1,4 +1,3 @@
-﻿Changes in version: fsia_1.1.1
+Changes in version: fsia_1.1.2
 
-Minor change in function report to allow argument columns to have any order.
-
+Minor bugs fixed.

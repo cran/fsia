@@ -15,7 +15,7 @@ report(obj, columns, whichid, grid = TRUE, main = "", las = 0, itemlab = NULL,
 	\item{whichid}{A vector containing the values of variable \code{id} that are shown on the graph.}
 	\item{grid}{logical; if \code{TRUE} horizontal lines are drown on the graph.}
 	\item{main}{an overall title for the plot.}
-	\item{las}{numeric in {0,1,2,3}; the style of axis labels (see \code{\link{par}}).}
+	\item{las}{numeric taking values 0,1,2 or 3; the style of axis labels (see \code{\link{par}}).}
 	\item{itemlab}{labels of the items.}
 	\item{weights}{logical. If \code{TRUE} the weights are displayed.}
 }

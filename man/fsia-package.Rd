@@ -20,8 +20,8 @@ to each item and the report of the responses of a few subjects.
 \tabular{ll}{
 Package: \tab fsia\cr
 Type: \tab Package\cr
-Version: \tab 1.1.1\cr
-Date: \tab 2017-06-23\cr
+Version: \tab 1.1.2\cr
+Date: \tab 2026-09-01\cr
 License: \tab GPL-3
 }
 Data of questionnaires and tests are often collected on paper forms.
